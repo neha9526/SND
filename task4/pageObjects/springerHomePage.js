@@ -16,6 +16,13 @@ get dateFilterType() {return Selector("#date-facet-mode")}
 get dateFilterSubmit() {return Selector("#date-facet-submit")}
 get article() {return Selector("#results-list li h2 a")}
 
+get settings() { return Selector("#search-options")}
+get advancedFilter() {return Selector("advanced-search-link")}
+get allWords() {return Selector("#all-words")}
+get leastWords() {return Selector("#least-words")}
+get titleContains() {return Selector("#title-is")}
+get authors() {return Selector("#author-is")}
+get submitAdvancedSearch() {return Selector("#submit-advanced-search")}
 
 async search(text){
     await t.typeText(this.searchInputTextBox,text).
@@ -57,6 +64,17 @@ async verifyinArticlePage(){
     await t.expect(utility.getLocation()).contains("article", "didnt navigate to article page", {timeout: 20000})
 
 }
+async setAdvancedFilter(advancedSearchData){
+
+    await t.
+    typeText(this.allWords,advancedSearchData.allWords).
+    typeText(this.leastWords,advancedSearchData.leastWords).
+    typeText(this.titleContains,advancedSearchData.title).
+    typeText(this.authors,advancedSearchData.authors).
+    click(this.submitAdvancedSearch)
 }
+}
+
+
 
 export default new springerHomePage();

@@ -4,7 +4,7 @@ import springerHomePage from '../pageObjects/springerHomePage';
 fixture `Validate search functionality using facet filters & advance search`
     .page `https://link.springer.com/`;
 
-test('Apply Facet Filters and open an article with open access', async t => {
+test.('Apply Facet Filters and open an article with open access', async t => {
     await springerHomePage.search("\"Sustainability\" AND  \"Management\"");
     
     await springerHomePage.applyFilter("Chapter");
@@ -26,9 +26,19 @@ test('Apply Facet Filters and open an article with open access', async t => {
     await springerHomePage.verifyinArticlePage();
 });
 
-test('Apply Advanced Filters and open an article with open access', async t => {
-    
-    await springerHomePage.search("\"Sustainability\" AND  \"Management\"");
-    
+test.page('https://link.springer.com/advanced-search')
+('Apply Advanced Filters and open an article with open access', async t => {
+        let data = {
+
+        "allWords":"sustainability",
+        "leastWords":"organised",
+        "title": "clusters",
+        "authors":"Sam Blili"
+    }
+    await springerHomePage.setAdvancedFilter(data);
+
+    await springerHomePage.clickOnArticle();
+    await springerHomePage.verifyinArticlePage();
+
     
 });
