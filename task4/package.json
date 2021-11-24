@@ -1,0 +1,14 @@
+{
+  "name": "sntestcafe",
+  "version": "1.0.0",
+  "description": "user journey tests for SN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^1.17.1"
+  }
+}
