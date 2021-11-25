@@ -1,0 +1,15 @@
+1. Perform an exploratory test on the home page, record/report the activity in a form of your choice that includes an overview of your approach
+2. From the above exercise, also prioritise your tests with reasons.
+
+
+1. Feature Based exploratory testing, time boxed for 25 mins for ech Feature. Features and the corresponding testcases are charted as a mind map in the picture on this folder.
+High level features and the order of priority are below
+ 1. Search -- The main functionality of SND is to get the right document to the user
+ 2. Content display -- The articles that the user wanted to view needs to be displayed exactly like it is supposed to be.
+ 3. Create Account/ Login -- Based on the subscription model, its the subscriptions that gets us the revenue, needs to be working flawlesly
+ 4. Secure -- The app needs to protect malicious use of the site and the data published.
+ 5. UI -- Usability, look & feel are important to give the user a better experience
+ 6. Locale/Interantionalisation -- The app needs to support a wide user base from different regions
+ 7. Footer Content -- Branding increases our value, Having a consistent Branding implemented on the sites is a must.
+ 
+

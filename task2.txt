@@ -1,0 +1,25 @@
+The forgotten password function is about to be enhanced so users cannot use the same password twice. They will also be able to enter a forgotten password prompt question/answer if they wish to add one to their account.
+1. What questions you would ask your product owner to ensure requirements are met?
+2. All features will be delivered using continuous delivery i.e each build goes straight to production without manual intervention. There is no preprod or staging environment with all integrations in place.
+a. How can you make sure that this new functionality is ready before it reaches the customer?
+
+1.  questions to the product owner
+    Is this functionality applicable for both individual & corporate accounts ?
+    What is the exact verbiage that needs to be displayed on ui to indicate the newly set password was used before and cannot be used now ?
+    Do we give custom questions/answers or a set of templates with sample questions.
+    Do we restrict this functionality to the last x numbers of passwords used ? what could x be ?
+    Do we have any Non Functional requirements for this functionality ? accessibility/ perf ?
+
+2.  How can you make sure this functionality is ready?
+    Following a TDD based approach write unit tests before the development.
+    commit the code to a feature branch, where unit tests pertaining to the module with code changed run.
+    Deploy the code to a sandbox environment for exploratory testing
+    Write integration, functional tests, load tests, DAST tests
+    Push your code to master( Trunk dev) branch along with new integration and functional tests which triggers the CI pipeline
+    Run all the unit tests/ code quality & code security static scans
+    Run integration, functional tests, load tests, DAST tests specific to code changes
+    Automatic Merge to release branch version x.x 
+    Run the Regression suite containing Integration, functional tests
+    Using canary releases, release to a smaller subset of user base (say 5%)
+    Keep Monitoring the feature usage and error rate.
+    If all goes well release it to all  users.
